@@ -1,0 +1,100 @@
+generated: '2026-08-04'
+method: searched
+source: https://deskera.github.io/Developer-Documentation/
+note: >-
+  Assertions are grounded in Deskera's own developer documentation and in live
+  probes of its API hosts. Deskera publishes no OpenAPI, so nothing is derived from
+  a machine-readable contract. Deskera publishes no security certifications
+  (SOC 2 / ISO 27001 / PCI DSS / HIPAA / FedRAMP) for itself — the ISO 27001 and
+  GDPR references on the marketing site describe compliance features of the ERP
+  product, not audits of Deskera as a vendor — so no `Compliance` pointer is
+  emitted.
+standards:
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger document is published. /openapi.json 404s and every Swagger
+    path on the API host returns HTTP 410 "Swagger documentation endpoints are no
+    longer supported".
+- id: oauth2
+  conforms: true
+  evidence: >-
+    Three-legged authorization-code flow documented, with authorization endpoint,
+    token endpoint, HTTP Basic client authentication, refresh tokens and scopes.
+- id: oauth2-discovery-rfc8414
+  conforms: false
+  evidence: /.well-known/oauth-authorization-server returns 404 on every API host.
+- id: oidc
+  conforms: partial
+  evidence: >-
+    An OIDC sign-in endpoint exists (POST /v1/iam/auth/sign-in/web/oidc-signin) for
+    inbound federation, but Deskera publishes no /.well-known/openid-configuration
+    and is not an OIDC provider for third-party apps.
+- id: jwt-rfc7519
+  conforms: true
+  evidence: >-
+    Authentication V2 documentation states the access token is a signed token per
+    RFC 7519; sample tokens are JWTs.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: >-
+    Errors are plain HTTP status plus prose description; no application/problem+json
+    representation.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on every host.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: >-
+    Deprecated Swagger endpoints return 410 with a JSON message but no Sunset or
+    Deprecation header, and no deprecation policy is published.
+- id: webhooks
+  conforms: true
+  evidence: >-
+    Registration/deregistration/list API plus a documented 22-event catalog; see
+    asyncapi/deskera-webhooks.yml.
+- id: asyncapi
+  conforms: false
+  evidence: No AsyncAPI document published for the webhook surface.
+- id: mcp
+  conforms: false
+  evidence: No Model Context Protocol server published.
+- id: a2a
+  conforms: false
+  evidence: /.well-known/agent-card.json and /.well-known/agent.json miss on every host.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency contract documented anywhere in the developer docs.
+- id: pagination
+  conforms: true
+  evidence: Consistent page/limit/sort/sortDir/search query parameters across list operations.
+- id: json-api
+  conforms: false
+  evidence: Custom response envelopes, not JSON:API.
+- id: odata
+  conforms: false
+- id: scim2
+  conforms: false
+- id: gdpr
+  conforms: unknown
+  evidence: >-
+    Deskera publishes a Data Protection Policy and Privacy Policy describing GDPR-
+    aligned handling, but no certification or audit report is published.
+  url: https://www.deskera.com/data-protection-policy
+regulatory_features:
+  note: >-
+    These are compliance capabilities of the Deskera product, documented in the
+    product release notes — not certifications held by Deskera.
+  items:
+  - India GST / GSTR-1 return filing
+  - Saudi Arabia e-invoicing bilingual document compliance
+  - Malaysia EA form, EPF and C.P. 8D payroll filings
+  - Indonesia eSPT Masa monthly and yearly payroll filings
+  - Singapore payroll and overtime compliance
+x-evidence:
+  fetched: '2026-08-04'
+  urls:
+  - https://bifrost-us.deskera.com/swagger.json
+  - https://deskera.github.io/Developer-Documentation/docs/books/oauthv2
+  - https://www.deskera.com/data-protection-policy
+  http_status: 200

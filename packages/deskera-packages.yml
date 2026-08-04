@@ -1,0 +1,87 @@
+generated: '2026-08-04'
+method: searched
+source: https://github.com/Deskera
+note: >-
+  Registries probed 2026-08-04: npm (search "deskera"), PyPI (404 for `deskera`),
+  Maven Central (0 results for "deskera"), plus the Deskera GitHub organisation and
+  the developer documentation SDK pages. Deskera ships one first-party client SDK —
+  a Java SDK distributed from its own GitHub-hosted Maven repository, not Maven
+  Central. No Python, Go, Ruby, PHP, .NET or Rust client library exists.
+packages:
+- language: java
+  registry: github
+  name: deskera-sdk-java
+  url: https://github.com/Deskera/deskera-sdk-java
+  install: Maven dependency resolved from the GitHub-hosted repository at https://github.com/Deskera/sdk-java-release
+  license: MIT
+  official: true
+  last_updated: '2020-09-08'
+  docs: https://deskera.github.io/Developer-Documentation/docs/books/sdk
+  note: >-
+    "Java SDK for Deskera Applications". Provides typed clients such as OAuthV2Client
+    used throughout the Authentication V2 and People documentation. Not published to
+    Maven Central; artifacts are served from the sdk-java-release repository.
+- language: java
+  registry: github
+  name: sdk-java-release
+  url: https://github.com/Deskera/sdk-java-release
+  install: add the raw repository URL as a Maven repository
+  official: true
+  last_updated: '2022-06-02'
+  note: Maven artifact repository for the Java SDK.
+- language: javascript
+  registry: npm
+  name: deskera-ui-library
+  url: https://www.npmjs.com/package/deskera-ui-library
+  install: npm install deskera-ui-library
+  official: false
+  official_note: >-
+    Published by an individual npm account (pkandrikar) with no repository,
+    homepage or organisation metadata linking it to Deskera Inc. Treated as
+    unverified rather than first-party.
+  last_published: '2024-11-14'
+  latest_version: 0.1.425
+  description: A set of React components used by Deskera product UIs.
+- language: javascript
+  registry: npm
+  name: deskera-copilot
+  url: https://www.npmjs.com/package/deskera-copilot
+  install: npm install deskera-copilot
+  official: false
+  official_note: Same unverified individual publisher as deskera-ui-library.
+  last_published: '2024-08-26'
+  latest_version: 1.0.21
+  description: Chat widget for the Deskera AI bot.
+samples:
+- language: javascript
+  name: deskera-cli-node-sample
+  url: https://github.com/Deskera/deskera-cli-node-sample
+  official: true
+  note: >-
+    "Command Line Deskera API Client in Node.js" — a sample application in the
+    Deskera GitHub org, not a supported/published CLI product. No cli/ artifact is
+    emitted for it.
+- language: java
+  name: sample-app-deskera-sdk-java
+  url: https://github.com/Deskera/sample-app-deskera-sdk-java
+  official: true
+  note: Sample application built using the Deskera Java SDK.
+registries_probed:
+- registry: npm
+  result: 2 unverified packages, 0 first-party API SDKs
+- registry: pypi
+  result: 404 for `deskera`
+- registry: maven-central
+  result: 0 results for "deskera"
+- registry: github
+  result: deskera-sdk-java (MIT), sdk-java-release
+gaps:
+- No SDK for Python, JavaScript/TypeScript, Go, Ruby, PHP, .NET or Rust.
+- The Java SDK has not been updated since 2020 and is not on Maven Central.
+x-evidence:
+  fetched: '2026-08-04'
+  urls:
+  - https://api.github.com/users/Deskera/repos
+  - https://registry.npmjs.org/-/v1/search?text=deskera
+  - https://search.maven.org/solrsearch/select?q=deskera
+  http_status: 200

@@ -1,0 +1,53 @@
+generated: '2026-08-04'
+method: searched
+source: https://deskera.github.io/Developer-Documentation/docs/books/oauthv2
+docs: https://deskera.github.io/Developer-Documentation/docs/books/oauthv2
+note: >-
+  Deskera publishes no OpenAPI document, so these scopes are read from the
+  provider's own OAuth documentation and from the per-operation Security tables in
+  the developer docs — not derived from securitySchemes. Deskera does not publish a
+  granular scopes/permissions reference page; the OAuth surface is coarse-grained.
+schemes:
+- name: Authorization
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://oauth.deskera.com/
+    tokenUrl: https://bifrost-us.deskera.com/oauth/token
+scopes:
+- scope: write
+  description: >-
+    Write access requested on the OAuth authorization link
+    (?client_id=...&scope=write&response_type=code). The scope used in every
+    authorization-link example Deskera publishes.
+  flows:
+  - authorizationCode
+  sources:
+  - https://deskera.github.io/Developer-Documentation/docs/books/oauthv2
+- scope: read
+  description: >-
+    Read access. Documented in combination with write on the token exchange
+    (grant_type=authorization_code&scope=read+write).
+  flows:
+  - authorizationCode
+  sources:
+  - https://deskera.github.io/Developer-Documentation/docs/environment/prod
+- scope: global
+  description: >-
+    The scope value carried on the per-operation "Security" tables in the generated
+    API reference (Security Schema "Authorization", Scopes "global") — recorded on
+    3,739 documented operations. Deskera does not decompose this into per-resource
+    scopes.
+  flows:
+  - authorizationCode
+  sources:
+  - https://deskera.github.io/Developer-Documentation/docs/books/invoiceapi
+  - https://deskera.github.io/Developer-Documentation/docs/sales/contactsapi
+gaps:
+- No published scopes/permissions reference page.
+- No per-resource or per-verb scopes; authorization is effectively account-wide
+  read/write plus a "global" operation scope.
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://raw.githubusercontent.com/Deskera/Developer-Documentation/master/docs/books/oauthv2.md
+  http_status: 200

@@ -1,0 +1,95 @@
+generated: '2026-08-04'
+method: searched
+source: https://deskera.github.io/Developer-Documentation/docs/books/oauthv2
+docs:
+- https://deskera.github.io/Developer-Documentation/docs/books/oauthv2
+- https://deskera.github.io/Developer-Documentation/docs/books/authenticationv2
+- https://deskera.github.io/Developer-Documentation/docs/books/setup
+- https://deskera.github.io/Developer-Documentation/docs/environment/prod
+note: >-
+  Deskera publishes no public OpenAPI/Swagger document — the API host answers
+  HTTP 410 on every Swagger documentation path (see lifecycle/). This profile is
+  therefore searched from the provider's own developer documentation rather than
+  derived from a machine-readable spec.
+summary:
+  types:
+  - oauth2
+  - apiKey
+  - http
+  api_key_in:
+  - header
+  oauth2_flows:
+  - authorizationCode
+  primary_credential: x-access-token request header
+schemes:
+- name: x-access-token
+  type: apiKey
+  in: header
+  parameter_name: x-access-token
+  description: >-
+    Every Deskera endpoint is secured and requires a valid access token passed in
+    the x-access-token request header. The token is a signed JWT (RFC 7519) issued
+    by the Deskera OAuth 2.0 token endpoint or by the sign-in APIs.
+  sources:
+  - https://deskera.github.io/Developer-Documentation/docs/books/started
+  - https://deskera.github.io/Developer-Documentation/docs/crmplus/started
+- name: Authorization
+  type: oauth2
+  description: >-
+    Three-legged OAuth 2.0 authorization-code flow. Partners register with Deskera
+    by email to receive a client_id and client_secret, then send users to the
+    Deskera authorization page with response_type=code, scope and client_id; the
+    returned authorization code is exchanged for access_token and refresh_token.
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://oauth.deskera.com/
+    tokenUrl: https://bifrost-us.deskera.com/oauth/token
+    token_endpoint_auth: >-
+      HTTP Basic — Authorization: Basic base64(client_id + ":" + client_secret)
+    scopes_documented:
+    - read
+    - write
+  staging:
+    authorizationUrl: https://oauth-staging.deskera.xyz/
+    tokenUrl: https://api-staging.deskera.xyz/v2/oauth/token
+  sources:
+  - https://deskera.github.io/Developer-Documentation/docs/books/oauthv2
+  - https://deskera.github.io/Developer-Documentation/docs/environment/prod
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  description: >-
+    A second security scheme named ApiKeyAuth appears on a subset of documented
+    operations (97 documented operations in the developer docs) alongside the
+    predominant "Authorization" scheme. The docs do not publish the parameter name
+    separately from x-access-token.
+  sources:
+  - https://deskera.github.io/Developer-Documentation/docs/books/iamapi
+token_lifecycle:
+  validate_endpoint: GET /v1/iam/token/app/validate
+  refresh: >-
+    refresh_token exchanged at the OAuth token endpoint; the SDK exposes
+    getAppRefreshToken(refreshToken)
+  expiry: >-
+    access_token is short-lived and can be validated at any time; the docs state it
+    "is not a permanent token and might become invalid time to time"
+sign_in_methods:
+- web password sign-in (POST /v1/iam/auth/sign-in/web/sign-in)
+- mobile sign-in with verification (POST /v1/iam/auth/sign-in/mobile, /mobile/verify)
+- email OTP (POST /v1/iam/auth/sign-in/send-otp-mail)
+- multi-factor authentication enable/verify/disable (/web/mfa, /web/mfa-enable, /web/mfa-signin, /web/mfa-status)
+- OIDC sign-in (POST /v1/iam/auth/sign-in/web/oidc-signin)
+- Clerk sign-in (POST /v1/iam/auth/sign-in/web/clerk-signin)
+- Workday sign-in (POST /v1/iam/auth/sign-in/web/workday-signin)
+partner_registration:
+  process: email
+  contact: care@deskera.com
+  required: app name, purpose, company name, email, HTTPS callback URL, public or private use
+  url: https://deskera.github.io/Developer-Documentation/docs/books/setup
+x-evidence:
+  fetched: '2026-08-04'
+  urls:
+  - https://deskera.github.io/Developer-Documentation/docs/books/oauthv2
+  - https://raw.githubusercontent.com/Deskera/Developer-Documentation/master/docs/books/oauthv2.md
+  - https://raw.githubusercontent.com/Deskera/Developer-Documentation/master/docs/environment/prod.md
+  http_status: 200

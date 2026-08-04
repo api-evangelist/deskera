@@ -1,0 +1,118 @@
+generated: '2026-08-04'
+method: searched
+source: https://deskera.github.io/Developer-Documentation/docs/books/webhook
+spec_type: none
+note: >-
+  Deskera documents a webhook registration API and a closed event-type enum, but
+  publishes no AsyncAPI document, no event payload schemas, and no signing/verification
+  contract. This artifact captures the webhook catalog verbatim from the provider's
+  documentation. NOT an AsyncAPI — no AsyncAPI spec exists to harvest.
+surface:
+  transport: HTTP POST to a subscriber-supplied webhookUrl
+  base_url: https://bifrost-us.deskera.com
+  registration:
+    operation: POST /v1/webhooks/register
+    body:
+    - clientId
+    - clientSecret
+    - accessToken
+    - refreshToken
+    - eventType
+    - webhookUrl
+    headers:
+    - x-access-token
+    returns:
+    - hookId
+    - eventType
+    - webhookUrl
+    - deleted
+  deregistration:
+    operation: DELETE /v1/webhooks/delete/{id}
+  list:
+    operation: GET /v1/webhooks
+  per_event_subscription: true
+  signing: null
+  retries: null
+  payload_schemas: null
+events:
+- name: CREATE_PRODUCTS
+  product: Books
+  description: Triggers when a Product is added in Books
+- name: CREATE_CONTACT
+  product: Books
+  description: Triggers when a Contact is added in Books
+- name: CREATE_BILL
+  product: Books
+  description: Triggers when a Bill is created in Books
+- name: UPDATE_BILL
+  product: Books
+  description: Triggers when a Bill is updated in Books
+- name: DELETE_BILL
+  product: Books
+  description: Triggers when a Bill is deleted in Books
+- name: CREATE_INVOICE
+  product: Books
+  description: Triggers when an Invoice is created in Books
+- name: UPDATE_INVOICE
+  product: Books
+  description: Triggers when an Invoice is updated in Books
+- name: DELETE_INVOICE
+  product: Books
+  description: Triggers when an Invoice is deleted in Books
+- name: CREATE_DEBITNOTE
+  product: Books
+  description: Triggers when a Debit Note is created in Books
+- name: UPDATE_DEBITNOTE
+  product: Books
+  description: Triggers when a Debit Note is updated in Books
+- name: DELETE_DEBITNOTE
+  product: Books
+  description: Triggers when a Debit Note is deleted in Books
+- name: CREATE_CREDITNOTE
+  product: Books
+  description: Triggers when a Credit Note is created in Books
+- name: UPDATE_CREDITNOTE
+  product: Books
+  description: Triggers when a Credit Note is updated in Books
+- name: DELETE_CREDITNOTE
+  product: Books
+  description: Triggers when a Credit Note is deleted in Books
+- name: CREATE_CRM_CONTACT
+  product: Sales
+  description: Triggers when a Contact is created in Sales
+- name: UPDATE_CRM_CONTACT
+  product: Sales
+  description: Triggers when a Contact is updated in Sales
+- name: DELETE_CRM_CONTACT
+  product: Sales
+  description: Triggers when a Contact is deleted in Sales
+- name: CREATE_CRM_DEAL
+  product: Sales
+  description: Triggers when a Deal is created in Sales
+- name: UPDATE_CRM_DEAL
+  product: Sales
+  description: Triggers when a Deal is updated in Sales
+- name: DELETE_CRM_DEAL
+  product: Sales
+  description: Triggers when a Deal is deleted in Sales
+- name: STOCK_IN
+  product: Books
+  description: Triggers when the Stock is increased for a Product in Books
+- name: STOCK_OUT
+  product: Books
+  description: Triggers when the Stock is reduced for a Product in Books
+coverage:
+  events: 22
+  products:
+  - Books
+  - Sales
+gaps:
+- No AsyncAPI document published.
+- No event payload schemas — only the event name is documented.
+- No webhook signature / verification header documented.
+- No delivery-retry or replay policy documented.
+- No People (HR/payroll) or CRM+ events in the catalog.
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://raw.githubusercontent.com/Deskera/Developer-Documentation/master/docs/books/webhook.md
+  http_status: 200

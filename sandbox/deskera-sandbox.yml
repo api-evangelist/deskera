@@ -1,0 +1,65 @@
+generated: '2026-08-04'
+method: searched
+source: https://deskera.github.io/Developer-Documentation/docs/environment/staging
+note: >-
+  Deskera runs a fully separate staging estate on the deskera.xyz domain and
+  publishes its base URLs in the developer documentation. There is no self-service
+  sandbox sign-up, no test-mode key prefix, no seeded test data and no fixture or
+  simulation tooling — access is obtained by registering as a partner by email.
+  No test values are published, so none are recorded here.
+environments:
+- name: production
+  api_base_url: https://bifrost-us.deskera.com
+  oauth_base_url: https://oauth.deskera.com/
+  token_url: https://bifrost-us.deskera.com/oauth/token
+  ui:
+  - https://booksplus.deskera.com/
+  - https://crmplus.deskera.com/
+  - https://peopleplus.deskera.com/
+  - https://go.deskera.com/
+  docs: https://deskera.github.io/Developer-Documentation/docs/environment/prod
+- name: staging
+  api_base_url: https://api-staging.deskera.xyz
+  oauth_base_url: https://oauth-staging.deskera.xyz
+  token_url: https://api-staging.deskera.xyz/v2/oauth/token
+  ui:
+  - https://books-ui-staging.deskera.xyz/
+  - https://crm-ui-staging.deskera.xyz/
+  - https://people-ui-staging.deskera.xyz/
+  - https://go-ui-staging.deskera.xyz
+  docs: https://deskera.github.io/Developer-Documentation/docs/environment/staging
+key_separation:
+  scheme: separate hosts per environment
+  key_prefixes:
+  - prefix: cl_pub_
+    meaning: OAuth client_id
+  - prefix: cl_priv_
+    meaning: OAuth client_secret
+  test_mode_prefix: null
+  note: >-
+    The cl_pub_/cl_priv_ prefixes are the documented shape of the OAuth client
+    credentials in both environments; they are not test-vs-live markers.
+access:
+  self_service: false
+  process: >-
+    Email care@deskera.com with app name, purpose, company name, email, HTTPS
+    callback URL, and whether the app is private or public, to be issued a
+    client_id and client_secret.
+  docs: https://deskera.github.io/Developer-Documentation/docs/books/setup
+  local_callback_hint: >-
+    The docs recommend ngrok to obtain a public HTTPS callback URL when developing
+    against a local server.
+test_values: []
+test_clocks: false
+fixtures: false
+gaps:
+- No self-service sandbox or developer console — credentials are issued by email.
+- No published test data, test identifiers, or simulation triggers.
+- No interactive API console (the Swagger UI was retired; see lifecycle/).
+x-evidence:
+  fetched: '2026-08-04'
+  urls:
+  - https://raw.githubusercontent.com/Deskera/Developer-Documentation/master/docs/environment/staging.md
+  - https://raw.githubusercontent.com/Deskera/Developer-Documentation/master/docs/environment/prod.md
+  - https://raw.githubusercontent.com/Deskera/Developer-Documentation/master/docs/books/setup.md
+  http_status: 200

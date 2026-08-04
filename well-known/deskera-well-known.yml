@@ -1,0 +1,81 @@
+generated: '2026-08-04'
+method: probed
+source: live probe of every Deskera host in apis.yml
+note: >-
+  Deskera publishes no /.well-known/ discovery surface on any host. Absence is
+  recorded data, not a gap in the probe. The oauth.deskera.com host is a
+  single-page app whose catch-all route answers HTTP 200 with an HTML shell for
+  every path, including every /.well-known/* path — all nine of those 200s were
+  rejected as false positives after content-type and body inspection (text/html,
+  `<!doctype html>`), not accepted as documents.
+hosts:
+- host: https://www.deskera.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /security.txt, status: 200, accepted: false, reason: 'Next.js catch-all
+      returned text/html, not RFC 9116 text'}
+- host: https://bifrost-us.deskera.com
+  role: production API host
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://oauth.deskera.com
+  role: OAuth authorization host
+  documents:
+  - {path: /.well-known/openid-configuration, status: 200, accepted: false, reason: SPA
+      catch-all returned text/html}
+  - {path: /.well-known/oauth-authorization-server, status: 200, accepted: false, reason: SPA
+      catch-all returned text/html}
+  - {path: /.well-known/oauth-protected-resource, status: 200, accepted: false, reason: SPA
+      catch-all returned text/html}
+  - {path: /.well-known/security.txt, status: 200, accepted: false, reason: SPA catch-all
+      returned text/html}
+  - {path: /.well-known/api-catalog, status: 200, accepted: false, reason: SPA catch-all
+      returned text/html}
+  - {path: /.well-known/ai-plugin.json, status: 200, accepted: false, reason: SPA catch-all
+      returned text/html}
+  - {path: /.well-known/agent-card.json, status: 200, accepted: false, reason: SPA catch-all
+      returned text/html}
+  - {path: /.well-known/agent.json, status: 200, accepted: false, reason: SPA catch-all
+      returned text/html}
+- host: https://auth-v2.deskera.com
+  role: sign-in host (redirects to erp.ai)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://api-staging.deskera.xyz
+  role: staging API host
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+summary:
+  documents_found: 0
+  security_txt: false
+  openid_configuration: false
+  oauth_authorization_server: false
+  api_catalog: false
+  agent_card: false
+x-evidence:
+  fetched: '2026-08-04'
+  hosts_probed: 5
+  paths_probed: 45

@@ -1,0 +1,111 @@
+generated: '2026-08-04'
+method: searched
+source: https://deskera.github.io/Developer-Documentation/
+note: >-
+  Cross-cutting request/response semantics read from Deskera's public developer
+  documentation. Deskera publishes no OpenAPI, so nothing here is derived from a
+  machine-readable spec; every convention below is evidenced by a documentation
+  page or by the generated API reference tables.
+authentication:
+  style: bearer token in a custom header
+  header: x-access-token
+  obtained_via: OAuth 2.0 authorization-code flow (see authentication/deskera-authentication.yml)
+  artifact: authentication/deskera-authentication.yml
+versioning:
+  scheme: uri-path
+  versions_in_use:
+  - v1
+  - v2
+  examples:
+  - /v1/contacts
+  - /v1/crm/contacts
+  - /v1/crm/core/table/{tableId}/record
+  - /v2/oauth/token
+  - /v1/iam/token/app/validate
+  header_negotiation: false
+  artifact: lifecycle/deskera-lifecycle.yml
+pagination:
+  style: page-number
+  params:
+  - name: page
+    in: query
+    note: zero/one-based page index; documented on 274 operations
+  - name: limit
+    in: query
+    note: page size; documented on 300 operations
+  - name: pageSize
+    in: query
+    note: alternate page-size parameter on a small number of operations
+  sorting:
+  - name: sort
+    in: query
+  - name: sortDir
+    in: query
+  - name: order
+    in: query
+  - name: orderBy
+    in: query
+  - name: order_by
+    in: query
+  filtering:
+  - name: search
+    in: query
+    note: free-text search; documented on 294 operations
+  response_envelope: >-
+    List responses wrap results in a data[] array alongside record metadata
+    (e.g. {"data": [...]}) — see the Sales Contacts response sample.
+  cursor: false
+field_expansion:
+  supported: partial
+  note: >-
+    A columns query parameter selects returned columns on some list operations, and
+    fetchAttachmentDetails expands attachment records. There is no general
+    expand/include convention.
+metadata:
+  custom_fields: true
+  docs: https://deskera.github.io/Developer-Documentation/docs/books/customFields
+  note: >-
+    Deskera exposes a Custom Fields API in Books and a column/record model in CRM+
+    rather than a free-form metadata bag.
+idempotency:
+  supported: false
+  evidence: >-
+    No idempotency key, Idempotency-Key header, request-replay or de-duplication
+    contract appears anywhere in the Deskera developer documentation (searched all
+    84 documentation pages, zero matches for "idempoten"). Retrying a POST is not
+    documented as safe.
+request_tracing:
+  request_id_header: null
+  evidence: no correlation/request-id header documented
+rate_limiting:
+  documented: false
+  signal_headers: []
+  evidence: >-
+    No rate-limit policy, quota page or X-RateLimit-* header is documented. HTTP 429
+    appears only inside the generic Spring HttpStatus enum reproduced in the IAM
+    object reference, never as a documented response on an operation.
+errors:
+  envelope: >-
+    Error responses are documented as a Code/Description/Schema table per operation;
+    successful envelopes commonly carry {"success": true, "id": ...}. The API host
+    itself returns a JSON envelope of the shape
+    {"status","code","message","requestPath"} on gateway-level errors.
+  problem_json: false
+  rfc9457: false
+  artifact: errors/deskera-problem-types.yml
+webhooks:
+  supported: true
+  registration: POST /v1/webhooks/register
+  artifact: asyncapi/deskera-webhooks.yml
+environments:
+  production: https://bifrost-us.deskera.com
+  staging: https://api-staging.deskera.xyz
+  artifact: sandbox/deskera-sandbox.yml
+content_type: application/json
+x-evidence:
+  fetched: '2026-08-04'
+  urls:
+  - https://deskera.github.io/Developer-Documentation/
+  - https://raw.githubusercontent.com/Deskera/Developer-Documentation/master/docs/sales/contactsapi.md
+  - https://raw.githubusercontent.com/Deskera/Developer-Documentation/master/docs/books/webhook.md
+  http_status: 200

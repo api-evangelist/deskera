@@ -1,0 +1,121 @@
+generated: '2026-08-04'
+method: searched
+source: https://deskera.github.io/Developer-Documentation/
+format: http-status
+rfc9457: false
+note: >-
+  Deskera publishes no OpenAPI and no dedicated error-code reference. This catalog is
+  aggregated from the per-operation "Responses" tables (Code | Description | Schema)
+  across all 84 pages of the public developer documentation, plus the JSON error
+  envelope observed live on the production API host. Counts are the number of
+  documented operation responses carrying that status.
+envelopes:
+- scope: gateway
+  observed_at: https://bifrost-us.deskera.com/swagger.json
+  shape:
+    status: string
+    code: integer
+    message: string
+    requestPath: string
+  example: '{"status":"error","code":410,"message":"This API endpoint is deprecated. Swagger
+    documentation endpoints are no longer supported.","requestPath":"/swagger.json"}'
+- scope: application
+  shape:
+    success: boolean
+    id: string
+  note: success envelope documented on CRM+ record operations
+problems:
+- status: 400
+  title: Bad Request
+  documented_responses: 828
+  common_descriptions:
+  - Sales invoice could not be created due to insufficient data.
+  - Payment failed because of insufficient data.
+  - Invalid request to organization setup.
+  remediation: Supply all required body fields for the resource being created.
+- status: 401
+  title: Unauthorized
+  documented_responses: 3779
+  common_descriptions:
+  - Unauthorized
+  - Cannot access information of different tenant.
+  - Failed to submit data
+  remediation: >-
+    Send a valid x-access-token header; validate the token at
+    GET /v1/iam/token/app/validate and refresh it with the OAuth refresh_token.
+- status: 403
+  title: Forbidden
+  documented_responses: 3771
+  common_descriptions:
+  - Forbidden
+  remediation: >-
+    The authenticated user or app lacks rights on the tenant/organization; re-run the
+    OAuth authorization with the correct organisation selected.
+- status: 404
+  title: Not Found
+  documented_responses: 3701
+  common_descriptions:
+  - Not Found
+  - Purchase invoice not found.
+  - Contact with id not found.
+  remediation: Verify the resource identifier and the tenant it belongs to.
+- status: 406
+  title: Not Acceptable
+  documented_responses: 3
+  common_descriptions:
+  - Product can not be assembled due to insufficient quantity
+  - Work order details could not be added in inventory.
+  remediation: Business-rule rejection in MRP/inventory — check available stock before assembly.
+- status: 409
+  title: Conflict
+  documented_responses: 1
+  common_descriptions:
+  - User with same username is already exist.
+  remediation: Choose a different username, or link the existing user.
+- status: 410
+  title: Gone
+  documented_responses: 6
+  common_descriptions:
+  - Email Token has been expired.
+  - The Confirmation code has been expired. Please generate a new confirmation code.
+  remediation: Regenerate the confirmation code or email token.
+  see_also: >-
+    The API host also returns 410 for every Swagger documentation path — see
+    lifecycle/deskera-lifecycle.yml.
+- status: 500
+  title: Internal Server Error
+  documented_responses: 49
+  common_descriptions:
+  - Inventory update fails.
+  - Unable to update invitation
+  - Could not switch tenant. Please try again.
+  remediation: Retry; escalate to care@deskera.com with the request path.
+- status: 208
+  title: Already Reported
+  documented_responses: 7
+  common_descriptions:
+  - User with same tenant already exists!
+  - User email is already linked.
+  remediation: >-
+    Non-standard use of 208 as an "already exists" signal on IAM user/tenant
+    operations — treat as a soft conflict, not an error.
+success_statuses:
+- status: 200
+  documented_responses: 4005
+- status: 201
+  documented_responses: 1775
+- status: 204
+  documented_responses: 591
+- status: 207
+  documented_responses: 60
+gaps:
+- No stable machine-readable error codes — errors are identified only by HTTP status
+  plus a prose description.
+- No application/problem+json (RFC 9457) representation.
+- No documented HTTP 429 / rate-limit error contract.
+x-evidence:
+  fetched: '2026-08-04'
+  urls:
+  - https://github.com/Deskera/Developer-Documentation
+  - https://bifrost-us.deskera.com/swagger.json
+  http_status: 200

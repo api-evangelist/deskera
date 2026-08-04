@@ -1,0 +1,69 @@
+generated: '2026-08-04'
+method: searched
+source: https://deskera.github.io/Developer-Documentation/
+versioning:
+  scheme: uri-path
+  current: v1
+  also_in_use:
+  - v2
+  docs: https://deskera.github.io/Developer-Documentation/
+  note: >-
+    Most documented resources sit under /v1/; the OAuth token exchange and the
+    Authentication Service V2 sit under /v2/. No version header or date-based
+    versioning is documented, and no version-support window is published.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  observed_deprecations:
+  - surface: Swagger documentation endpoints
+    status: 410
+    observed: '2026-08-04'
+    evidence_urls:
+    - https://bifrost-us.deskera.com/swagger.json
+    - https://bifrost-us.deskera.com/v1/swagger.json
+    - https://bifrost-us.deskera.com/swagger-ui.html
+    - https://api-staging.deskera.xyz/swagger.json
+    message: This API endpoint is deprecated. Swagger documentation endpoints are no
+      longer supported.
+    note: >-
+      The API host actively serves a 410 Gone deprecation notice for every Swagger
+      path, which is why no machine-readable contract can be harvested. This is an
+      observed deprecation, not a published deprecation policy — Deskera publishes
+      no policy document, no Sunset/Deprecation headers and no migration guidance.
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: https://status.deskera.com/
+  provider: Sorry™
+  http_status: 200
+  observed: '2026-08-04'
+  status_api: true
+  components_listed: false
+  note: Overall-status page only; no per-service component breakdown published.
+release_notes:
+  urls:
+  - https://www.deskera.com/care/deskera-books-release-notes/
+  - https://www.deskera.com/care/deskera-sales-release-notes/
+  - https://www.deskera.com/care/deskera-people-release-notes/
+  - https://www.deskera.com/care/tag/announcements/
+  latest_entry: '2021-10-14'
+  artifact: changelog/deskera-changelog.yml
+support:
+  help_center: https://www.deskera.com/care/
+  contact: https://www.deskera.com/contact-us
+  developer_contact: care@deskera.com
+deprecated_operations: []
+gaps:
+- No published API deprecation policy or Sunset/Deprecation header support.
+- No published SLA or uptime target.
+- Product release notes have not been updated since October 2021.
+- No developer-facing API changelog distinct from product release notes.
+x-evidence:
+  fetched: '2026-08-04'
+  urls:
+  - https://status.deskera.com/
+  - https://bifrost-us.deskera.com/swagger.json
+  - https://www.deskera.com/care/deskera-books-release-notes/
+  http_status: 200

@@ -1,23 +1,176 @@
 aid: deskera
 name: Deskera
-description: 'Deskera is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Deskera is a cloud business-software suite for small and mid-sized businesses,
+  combining ERP and accounting (Deskera Books), CRM and sales (Deskera Sales / CRM+),
+  and HR and payroll (Deskera People) on a single platform covering purchasing, sales,
+  stock and inventory, warehouses, manufacturing/MRP, billing, invoicing, quotations,
+  payments, tax and financial reporting, contacts and deals, employees, attendance,
+  leave, expenses and pay runs. Deskera publishes a public developer documentation
+  site covering REST APIs for Books, Sales, CRM+ and People, a three-legged OAuth 2.0
+  authorization flow with an x-access-token bearer header, a webhook registration API
+  with a documented event catalog, separate staging and production environments, and
+  a Java SDK. The company operates from Singapore and the United States and also trades
+  under the erp.ai brand for account sign-up and sign-in.'
+image: https://deskera.github.io/Developer-Documentation/img/deskera-logo-1.png
 url: https://raw.githubusercontent.com/api-evangelist/deskera/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-04'
 modified: '2026-08-04'
+x-enrichment:
+  date: '2026-08-04'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1
 tags:
 - Company
-apis: []
+- ERP
+- Accounting
+- CRM
+- Human Resources
+- Payroll
+- Inventory
+- Invoicing
+- Small Business
+- SaaS
+apis:
+- aid: deskera:books
+  name: Deskera Books API
+  description: 'REST API for Deskera Books, the cloud ERP and accounting product —
+    contacts, products, accounts, invoices, bills, quotations, sales and purchase orders,
+    credit and debit notes, deposits, expenses, payments, fulfillment, shipments, stock
+    and warehouses, MRP, taxes, journals, tenants, custom fields, reports and webhooks.
+    Documented on the public Deskera developer documentation site; secured with an
+    x-access-token header issued through the Deskera OAuth 2.0 flow.'
+  humanURL: https://deskera.github.io/Developer-Documentation/docs/books/started
+  baseURL: https://bifrost-us.deskera.com
+  tags:
+  - ERP
+  - Accounting
+  - Invoicing
+  - Inventory
+  properties:
+  - type: Documentation
+    url: https://deskera.github.io/Developer-Documentation/docs/books/started
+  - type: APIReference
+    url: https://deskera.github.io/Developer-Documentation/docs/books/invoiceapi
+  - type: Webhooks
+    url: https://deskera.github.io/Developer-Documentation/docs/books/webhook
+- aid: deskera:sales
+  name: Deskera Sales API
+  description: 'REST API for Deskera Sales — contacts, deals, activities and campaigns
+    for the CRM side of the platform. Documented on the public Deskera developer documentation
+    site under the same x-access-token authentication model as Books.'
+  humanURL: https://deskera.github.io/Developer-Documentation/docs/sales/started
+  baseURL: https://bifrost-us.deskera.com
+  tags:
+  - CRM
+  - Sales
+  properties:
+  - type: Documentation
+    url: https://deskera.github.io/Developer-Documentation/docs/sales/started
+  - type: APIReference
+    url: https://deskera.github.io/Developer-Documentation/docs/sales/contactsapi
+- aid: deskera:crmplus
+  name: Deskera CRM+ API
+  description: 'REST API for Deskera CRM+ — a table/column/record data model that lets
+    an application create tables, define columns and manage records inside the CRM+
+    workspace. Documented on the public Deskera developer documentation site.'
+  humanURL: https://deskera.github.io/Developer-Documentation/docs/crmplus/started
+  baseURL: https://bifrost-us.deskera.com
+  tags:
+  - CRM
+  - Records
+  properties:
+  - type: Documentation
+    url: https://deskera.github.io/Developer-Documentation/docs/crmplus/started
+  - type: APIReference
+    url: https://deskera.github.io/Developer-Documentation/docs/crmplus/record-api
+- aid: deskera:people
+  name: Deskera People API
+  description: 'API for Deskera People, the HR, payroll and employee-self-service product
+    — employees, teams, shifts, attendance, leave, expenses, bank accounts, pay schedules,
+    pay runs, payroll components and component groups, compliance, templates, tenants
+    and users. Documented on the public Deskera developer documentation site, largely
+    through the Deskera Java SDK client surface.'
+  humanURL: https://deskera.github.io/Developer-Documentation/docs/people/started
+  baseURL: https://bifrost-us.deskera.com
+  tags:
+  - Human Resources
+  - Payroll
+  properties:
+  - type: Documentation
+    url: https://deskera.github.io/Developer-Documentation/docs/people/started
+  - type: APIReference
+    url: https://deskera.github.io/Developer-Documentation/docs/people/employee
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/deskera-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/deskera_stock/
+  url: https://www.deskera.com/
+- type: DeveloperPortal
+  url: https://deskera.github.io/Developer-Documentation/
+- type: Documentation
+  url: https://deskera.github.io/Developer-Documentation/
+- type: APIReference
+  url: https://deskera.github.io/Developer-Documentation/docs/books/invoiceapi
+- type: GettingStarted
+  url: https://deskera.github.io/Developer-Documentation/docs/books/started
+- type: Authentication
+  url: authentication/deskera-authentication.yml
+- type: OAuthScopes
+  url: scopes/deskera-scopes.yml
+- type: GitHubOrganization
+  url: https://github.com/Deskera
+- type: Blog
+  url: https://www.deskera.com/blog/
+- type: BlogRSS
+  url: https://www.deskera.com/blog/rss/
+- type: Support
+  url: https://www.deskera.com/care/
+- type: HelpCenter
+  url: https://www.deskera.com/care/
+- type: ContactUs
+  url: https://www.deskera.com/contact-us
+- type: Pricing
+  url: https://www.deskera.com/pricing
+- type: SignUp
+  url: https://www.deskera.com/signup
+- type: Login
+  url: https://auth-v2.deskera.com/sign-in
+- type: TermsOfService
+  url: https://www.deskera.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.deskera.com/privacy-policy
+- type: DataProtection
+  url: https://www.deskera.com/data-protection-policy
+- type: StatusPage
+  url: https://status.deskera.com/
+- type: ChangeLog
+  url: changelog/deskera-changelog.yml
+- type: Lifecycle
+  url: lifecycle/deskera-lifecycle.yml
+- type: Conventions
+  url: conventions/deskera-conventions.yml
+- type: ErrorCatalog
+  url: errors/deskera-problem-types.yml
+- type: Webhooks
+  url: asyncapi/deskera-webhooks.yml
+- type: Packages
+  url: packages/deskera-packages.yml
+- type: SDKs
+  url: packages/deskera-packages.yml
+- type: Sandbox
+  url: sandbox/deskera-sandbox.yml
+- type: WellKnown
+  url: well-known/deskera-well-known.yml
+- type: Conformance
+  url: conformance/deskera-conformance.yml
+- type: LLMsTxt
+  url: llms/deskera-llms.txt

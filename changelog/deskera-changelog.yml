@@ -1,0 +1,102 @@
+generated: '2026-08-04'
+method: searched
+source: https://www.deskera.com/care/
+scheme: dated-release-notes
+current_version: null
+note: >-
+  Deskera publishes per-product release notes on its Care (help centre) site rather
+  than a developer/API changelog. There is no changelog for the REST API itself, and
+  the published product release notes have not been updated since October 2021. The
+  Deskera GitHub org also carries an empty `release-notes` repository (README +
+  LICENSE only).
+feeds:
+- https://www.deskera.com/care/rss/
+sources:
+- product: Books (ERP / accounting)
+  url: https://www.deskera.com/care/deskera-books-release-notes/
+  latest_entry: '2021-10-14'
+- product: Sales (CRM)
+  url: https://www.deskera.com/care/deskera-sales-release-notes/
+  latest_entry: '2021-07-13'
+- product: People (HR / payroll)
+  url: https://www.deskera.com/care/deskera-people-release-notes/
+  latest_entry: '2021-09-17'
+- product: Announcements
+  url: https://www.deskera.com/care/tag/announcements/
+- product: Empty GitHub release-notes repo
+  url: https://github.com/Deskera/release-notes
+entries:
+- date: '2021-10-14'
+  product: Books
+  highlights:
+  - Bulk fulfillment and bulk goods receipt
+  - Multi-warehouse fulfillment and receipt processing
+  - Stock transfer for batch and serial products with multiple batch combinations
+  breaking: false
+- date: '2021-09-17'
+  product: People
+  highlights:
+  - Indonesia payroll bank transfer reporting
+  - Malaysia yearly tax file generation (C.P. 8D)
+  - Indonesian language support
+  - Employee export with filtering
+  breaking: false
+- date: '2021-09-09'
+  product: Books
+  highlights:
+  - Hindi, Punjabi and Bengali language support
+  - Multiple units of measurement with stock adjustments
+  - General Ledger reporting enhancements
+  breaking: false
+- date: '2021-09-07'
+  product: People
+  highlights:
+  - Malaysia annual EA form compliance reporting and updated EPF specifications
+  - Employee import/export with compliance details for India, Singapore, Malaysia
+  - Tax-exempt payroll component classification
+  breaking: false
+- date: '2021-09-02'
+  product: Books
+  highlights:
+  - Bill of Materials assembly for serialized and batch-tracked products
+  breaking: false
+- date: '2021-08-26'
+  product: Books
+  highlights:
+  - Saudi Arabia compliance with bilingual document printing
+  - Invoice and bill template design enhancements
+  breaking: false
+- date: '2021-08-19'
+  product: People
+  highlights:
+  - Indonesia monthly and yearly eSPT Masa CSV generation
+  - Clock-based e-leave notifications, payrun revert and delete
+  breaking: false
+- date: '2021-08-02'
+  product: People
+  highlights:
+  - People-to-Books integration for payroll journal entries
+  - Clock in/out attendance tracking and reporting
+  breaking: false
+- date: '2021-07-13'
+  product: Sales
+  highlights:
+  - Fixed OAuth state-change issue with the Office 365 integration
+  - Fixed a login CSRF vulnerability in Google OAuth login
+  breaking: false
+- date: '2021-06-02'
+  product: Sales
+  highlights:
+  - Dynamic segment and contact mapping optimized for API performance
+  - Limits introduced on active webhook keys per user
+  breaking: false
+gaps:
+- No API-specific changelog or version history.
+- Product release notes stale since 2021-10-14.
+x-evidence:
+  fetched: '2026-08-04'
+  urls:
+  - https://www.deskera.com/care/deskera-books-release-notes/
+  - https://www.deskera.com/care/deskera-sales-release-notes/
+  - https://www.deskera.com/care/deskera-people-release-notes/
+  http_status: 200

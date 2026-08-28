@@ -11,6 +11,17 @@ description: 'Deskera is a cloud business-software suite for small and mid-sized
   with a documented event catalog, separate staging and production environments, and
   a Java SDK. The company operates from Singapore and the United States and also trades
   under the erp.ai brand for account sign-up and sign-in.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://deskera.github.io/Developer-Documentation/img/deskera-logo-1.png
 url: https://raw.githubusercontent.com/api-evangelist/deskera/refs/heads/main/apis.yml
 x-type: company

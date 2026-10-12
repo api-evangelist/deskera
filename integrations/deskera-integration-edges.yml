@@ -1,0 +1,449 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/deskera/integrations
+checked:
+- https://composio.dev/toolkits/deskera
+- https://monid.ai/tools/deskera
+- https://n8n.io/integrations/deskera/
+- https://zapier.com/apps/deskera/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: deskera
+  url: https://zapier.com/apps/deskera/integrations
+  external_url: https://www.deskera.com/
+  partner_tier: BRONZE
+  triggers:
+  - key: crm3_contact
+    label: New CRM+ Contact
+  - key: crm3_deal
+    label: New CRM+ Deal
+  - key: newContact
+    label: New Contact
+  - key: newCrmContact
+    label: New CRM Contact
+  - key: newCrmDeal
+    label: New CRM Deal
+  - key: newProduct
+    label: New Product
+  actions:
+  - key: create_account
+    label: Create a New Account
+  - key: create_bills
+    label: Create a New Bill
+  - key: create_contact
+    label: Create a New Contact
+  - key: create_crm3_contact
+    label: Create a New Contact in CRM+
+  - key: create_crm_contact
+    label: Create a New Contact in CRM
+  - key: create_crm_deal
+    label: Create a New Deal in CRM
+  - key: create_invoice
+    label: Create a New Sales Invoice
+  - key: create_invoice_shopify
+    label: Create a New Sales Invoice - Shopify Integration
+  - key: create_order
+    label: Create a New Order
+  - key: create_product
+    label: Create New Product
+  - key: create_quotation
+    label: Create a New Quotation
+  - key: update_crm_deal
+    label: Update an Existing Deal in CRM
+  searches: []
+edges:
+- partner_name: WooCommerce
+  partner: woocommerce
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/woocommerce
+  direction: third-party
+  category: eCommerce
+  partner_url: https://woocommerce.com/products/woocommerce-zapier/?utm_source=zapier&utm_medium=website&utm_campaign=integration
+- partner_name: ClickUp
+  partner: clickup
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/clickup
+  direction: third-party
+  category: Project Management
+  partner_url: https://clickup.com/zapier
+- partner_name: Google Forms
+  partner: google-forms
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/google-forms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: http://google.com/
+- partner_name: Databox
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/databox
+  direction: third-party
+  category: Business Intelligence
+  partner_url: https://databox.com/pricing
+- partner_name: QuestionScout
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/questionscout
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.questionscout.com/
+- partner_name: Brevo
+  partner: brevo
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/brevo
+  direction: third-party
+  category: Email Newsletters
+  partner_url: https://www.sendinblue.com/?utm_medium=plugin&utm_source=zapier
+- partner_name: Google Calendar
+  partner: google-calendar
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/google-calendar
+  direction: third-party
+  category: Calendar
+  partner_url: https://calendar.google.com/
+- partner_name: Typeform
+  partner: typeform
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/typeform
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.typeform.com/signup?utm_medium=referral&utm_source=zapier&utm_campaign=zapier_integration&utm_content=marketplace
+- partner_name: Microsoft Teams
+  partner: microsoft-teams
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/microsoft-teams
+  direction: third-party
+  category: Microsoft
+  partner_url: https://products.office.com/en-us/microsoft-teams/group-chat-software
+- partner_name: Facebook Lead Ads (for Business admins)
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/facebook-lead-ads-beta
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://facebook.com/
+- partner_name: Book Like A Boss
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/book-like-a-boss
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://booklikeaboss.com/
+- partner_name: Google Drive
+  partner: google-drive
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/google-drive
+  direction: third-party
+  category: File Management & Storage
+  partner_url: https://www.google.com/drive/
+- partner_name: Facebook Lead Ads
+  partner: facebook-lead-ads
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/facebook-lead-ads
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://www.facebook.com/business/ads/lead-ads
+- partner_name: Manychat
+  partner: manychat
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/manychat
+  direction: third-party
+  category: Social Media Marketing
+  partner_url: https://manychat.com/
+- partner_name: Unbounce
+  partner: unbounce
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/unbounce
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://unbounce.com/
+- partner_name: Wave
+  partner: wave-financial
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/wave
+  direction: third-party
+  category: Accounting
+  partner_url: https://www.waveapps.com/
+- partner_name: Ecwid by Lightspeed
+  partner: ecwid
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/ecwid
+  direction: third-party
+  category: eCommerce
+  partner_url: https://www.ecwid.com/
+- partner_name: Magento
+  partner: magento
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/magento
+  direction: third-party
+  category: eCommerce
+  partner_url: https://magento.com/
+- partner_name: Trello
+  partner: trello
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/trello
+  direction: third-party
+  category: Project Management
+  partner_url: https://trello.com/
+- partner_name: Google Ads
+  partner: google-ads
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/google-ads
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://ads.google.com/
+- partner_name: ActiveCampaign
+  partner: activecampaign
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/activecampaign
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://www.activecampaign.com/?utm_source=unpaid_syndication_website&utm_medium=referral&utm_campaign=zapier_listing
+- partner_name: Docusign
+  partner: docusign
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/docusign
+  direction: third-party
+  category: AI Document Extraction
+  partner_url: https://go.docusign.com/trial/us-goog-trynow-display-zapier/
+- partner_name: Microsoft Office 365
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/office-365
+  direction: third-party
+  category: Email
+  partner_url: https://www.office.com/
+- partner_name: Zapier Chatbots
+  partner: zapier
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/zapier-chatbots
+  direction: third-party
+  category: AI Chatbots
+  partner_url: https://zapier.com/blog/create-custom-ai-chatbots-with-interfaces/
+- partner_name: Wufoo
+  partner: wufoo
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/wufoo
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.wufoo.com/
+- partner_name: Facebook Messenger
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/facebook-messenger
+  direction: third-party
+  category: Facebook
+  partner_url: https://www.messenger.com/
+- partner_name: Evernote
+  partner: evernote
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/evernote
+  direction: third-party
+  category: Notes
+  partner_url: https://evernote.com/
+- partner_name: Leadpages
+  partner: leadpages
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/leadpages
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.leadpages.net/
+- partner_name: Microsoft Exchange
+  partner: microsoft-exchange
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/microsoft-exchange
+  direction: third-party
+  category: Email
+  partner_url: https://products.office.com/en-us/exchange/email
+- partner_name: Odoo ERP Self Hosted
+  partner: odoo
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/deskera/integrations/openerp
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://www.odoo.com/
+templates:
+- title: Deskera to Google Sheets
+  url: https://zapier.com/apps/deskera/integrations/google-sheets/241138/deskera-to-google-sheets
+  apps:
+  - deskera
+  - google-sheets
+- title: Create Deskera contacts for new or updated Google Contacts
+  url: https://zapier.com/apps/deskera/integrations/google-contacts/241210/create-deskera-contacts-for-new-or-updated-google-contacts
+  apps:
+  - google-contacts
+  - deskera
+- title: Create Google Sheet rows for new contacts in Deskera
+  url: https://zapier.com/apps/deskera/integrations/google-sheets/242612/create-google-sheet-rows-for-new-contacts-in-deskera
+  apps:
+  - deskera
+  - google-sheets
+- title: Send Slack channel messages for new contacts in Deskera
+  url: https://zapier.com/apps/deskera/integrations/slack/242863/send-slack-channel-messages-for-new-contacts-in-deskera
+  apps:
+  - deskera
+  - slack
+- title: Send Slack channel message for new products in Deskera
+  url: https://zapier.com/apps/deskera/integrations/slack/242876/send-slack-channel-message-for-new-products-in-deskera
+  apps:
+  - deskera
+  - slack
+- title: Create Shopify customers for new contacts in Deskera
+  url: https://zapier.com/apps/deskera/integrations/shopify/243968/create-shopify-customers-for-new-contacts-in-deskera
+  apps:
+  - deskera
+  - shopify
+- title: Send an email to a specified email address when a new contact is added in Deskera
+  url: https://zapier.com/apps/deskera/integrations/gmail/244065/send-an-email-to-a-specified-email-address-when-a-new-contact-is-added-in-deskera
+  apps:
+  - deskera
+  - gmail
+- title: Create Dropbox text files for new contacts in Deskera
+  url: https://zapier.com/apps/deskera/integrations/dropbox/244107/create-dropbox-text-files-for-new-contacts-in-deskera
+  apps:
+  - deskera
+  - dropbox
+- title: Add new MailerLite Classic subscribers to Deskera crm+ as contacts
+  url: https://zapier.com/apps/deskera/integrations/mailerlite-classic/1267680/add-new-mailerlite-classic-subscribers-to-deskera-crm-as-contacts
+  apps:
+  - mailerlite-classic
+  - deskera
+- title: Create Microsoft Teams chat messages for new Deskera crm+ deals
+  url: https://zapier.com/apps/deskera/integrations/microsoft-teams/1323185/create-microsoft-teams-chat-messages-for-new-deskera-crm-deals
+  apps:
+  - deskera
+  - microsoft-teams
+- title: Add new QuestionScout submissions as contacts in Deskera crm+
+  url: https://zapier.com/apps/deskera/integrations/questionscout/1398522/add-new-questionscout-submissions-as-contacts-in-deskera-crm
+  apps:
+  - questionscout
+  - deskera
+- title: Create Deskera contacts from new Unbounce form submissions
+  url: https://zapier.com/apps/deskera/integrations/unbounce/1412236/create-deskera-contacts-from-new-unbounce-form-submissions
+  apps:
+  - unbounce
+  - deskera
+template_total: 25

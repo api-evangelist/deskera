@@ -271,7 +271,6 @@
   arazzo: null
 - slug: deskera-microsoft-office-365
   label: Microsoft Office 365
-  partner: microsoft-office-365
   partner_name: Microsoft Office 365
   category: Email
   type: marketplace
@@ -363,4 +362,36 @@
   evidence: https://zapier.com/apps/deskera/integrations/openerp
   source: edge
   status: pending-partner-spec
+  arazzo: null
+- slug: deskera-openpeppol-certified-service-providers
+  label: OpenPeppol (certified service providers)
+  partner_name: OpenPeppol (certified service providers)
+  category: Peppol service provider
+  type: register
+  channel: standard-directory
+  evidence: https://peppol.org/members/peppol-certified-service-providers/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: OpenPeppol certified service providers (peppol.org/members/peppol-certified-service-providers)
+    spec_file: null
+    standard: Peppol
+    role: peppol-certified-service-provider
+    registered_name: Deskera Singapore Pte. Ltd.
+    legal_name: Deskera Singapore Pte. Ltd.
+    matched_domain: deskera.com
+    matched_by: domain
+    domain_source: contact email domain
+    peppol_authorities:
+    - IMDA
+    countries:
+    - Singapore
+    certified_products:
+    - product: Access Point
+      lapsed: false
+    signal_note: certified_products = one entry per Peppol-certified SERVICE (Access Point, SMP); authorities and
+      countries are context, never read
+    detected_by: sweep-einvoicing-tax.py
+    detected: '2026-10-15'
+  status: not-a-workflow
   arazzo: null

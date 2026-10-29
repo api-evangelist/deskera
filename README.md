@@ -64,5 +64,112 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Deskera is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/deskera_stock/
+Deskera is a cloud business-software suite for small and mid-sized businesses, combining ERP and accounting (Deskera Books), CRM and sales (Deskera Sales / CRM+), and HR and payroll (Deskera People) on a single platform covering purchasing, sales, stock and inventory, warehouses, manufacturing/MRP, billing, invoicing, quotations, payments, tax and financial reporting, contacts and deals, employees, attendance, leave, expenses and pay runs. Deskera publishes a public developer documentation site covering REST APIs for Books, Sales, CRM+ and People, a three-legged OAuth 2.0 authorization flow with an x-access-token bearer header, a webhook registration API with a documented event catalog, separate staging and production environments, and a Java SDK. The company operates from Singapore and the United States and also trades under the erp.ai brand for account sign-up and sign-in.
+
+**Areas:** Company · ERP · Accounting · CRM · Human Resources · Payroll · Inventory · Invoicing · Small Business · Software-as-a-Service
+
+## Deskera on APIs.io
+
+Everything profiled for Deskera is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/deskera/](https://apis.io/providers/deskera/)** — or go straight to one of the APIs or properties below.
+
+### APIs (4)
+
+- [Deskera Books API](https://apis.io/apis/deskera/books/) — REST API for Deskera Books, the cloud ERP and accounting product — contacts, products, accounts, invoices, bills, quotations, sales and purchase orders,…
+- [Deskera Sales API](https://apis.io/apis/deskera/sales/) — REST API for Deskera Sales — contacts, deals, activities and campaigns for the CRM side of the platform. Documented on the public Deskera developer…
+- [Deskera CRM+ API](https://apis.io/apis/deskera/crmplus/) — REST API for Deskera CRM+ — a table/column/record data model that lets an application create tables, define columns and manage records inside the CRM+…
+- [Deskera People API](https://apis.io/apis/deskera/people/) — API for Deskera People, the HR, payroll and employee-self-service product — employees, teams, shifts, attendance, leave, expenses, bank accounts, pay…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Deskera Webhooks](https://apis.io/asyncapis/deskera/deskera-webhooks/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Deskera Authentication](https://apis.io/security/deskera/deskera-authentication/)
+- [Deskera Domain Security](https://apis.io/security/deskera/deskera-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Deskera Scopes](https://apis.io/scopes/deskera/deskera-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.deskera.com/)
+- [Documentation](https://deskera.github.io/Developer-Documentation/)
+- [Getting started](https://deskera.github.io/Developer-Documentation/docs/books/started)
+- [API reference](https://deskera.github.io/Developer-Documentation/docs/books/invoiceapi)
+- [Pricing](https://www.deskera.com/pricing)
+- [Sign up](https://www.deskera.com/signup)
+- [Support](https://www.deskera.com/care/)
+- [Blog](https://www.deskera.com/blog/)
+- [Terms of service](https://www.deskera.com/terms-of-service)
+- [Privacy policy](https://www.deskera.com/privacy-policy)
+- [GitHub](https://github.com/Deskera)
+- [Status](https://status.deskera.com/)
+
+## API Evangelist rating
+
+**Kin Score 50.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 71.4 |
+| Access clarity | 44.7 |
+
+**Agent readiness 22.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 34.3** — Employment & Payroll
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/deskera/](https://apis.io/providers/deskera/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Deskera: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/deskera/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
